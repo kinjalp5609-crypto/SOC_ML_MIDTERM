@@ -1,0 +1,120 @@
+# Week 1 (Python Basics)
+
+# Variables and Data Types
+name = "Suhani"
+age = 18
+CPI = 8.5
+is_student = True
+
+print("Name:", name)
+print("Age:", age)
+print("CPI:", CPI)
+print("Is Student:", is_student)
+
+# Lists
+fruits = ["apple", "banana", "cherry"]
+fruits.append("mango")
+print("\nFruits list:", fruits)
+print("First fruit:", fruits[0])
+
+# Loops
+print("\nPrinting fruits using loop:")
+for fruit in fruits:
+    print(fruit)
+
+# Functions
+def greet(name):
+    return "Hello, " + name + "!"
+
+print("\n" + greet("World"))
+
+# Conditionals
+marks = 75
+if marks >= 90:
+    print("Grade: A")
+elif marks >= 75:
+    print("Grade: B")
+else:
+    print("Grade: C")
+
+# Dictionaries
+student = {
+    "name": "Karan",
+    "age": 20,
+    "branch": "CS"
+}
+print("\nStudent info:", student)
+
+## NUMPY
+import numpy as np
+
+# Creating arrays
+arr = np.array([1, 2, 3, 4, 5])
+print("\n--- NumPy ---")
+print("Array:", arr)
+print("Shape:", arr.shape)
+print("Mean:", np.mean(arr))
+print("Sum:", np.sum(arr))
+
+# 2D array
+matrix = np.array([[1, 2, 3], [4, 5, 6]])
+print("2D Matrix:\n", matrix)
+print("Matrix shape:", matrix.shape)
+print("Transpose:\n", matrix.T)
+
+# Array operations
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+print("Addition:", a + b)
+print("Multiplication:", a * b)
+print("Dot product:", np.dot(a, b))
+
+## MATPLOTLIB
+import matplotlib.pyplot as plt
+
+# Simple line plot
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+plt.figure(figsize=(8, 4))
+plt.plot(x, y, color='blue', label='sin(x)')
+plt.title("Sine Wave")
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.legend()
+plt.grid(True)
+plt.savefig("sine_wave.png")
+print("Sine wave plot saved as sine_wave.png")
+plt.close()
+
+# Bar chart
+categories = ["Python", "NumPy", "Matplotlib", "Pandas"]
+scores = [90, 80, 75, 85]
+
+plt.figure(figsize=(8, 4))
+plt.bar(categories, scores, color='green')
+plt.title("Library Learning Progress")
+plt.xlabel("Library")
+plt.ylabel("Understanding (%)")
+plt.savefig("progress_bar.png")
+print("Bar chart saved as progress_bar.png")
+plt.close()
+
+## PANDAS
+import pandas as pd
+
+# Creating a DataFrame
+data = {
+    "Name": ["Alice", "Bob", "Charlie", "David"],
+    "Age": [22, 25, 23, 24],
+    "Score": [88, 92, 79, 95]
+}
+
+df = pd.DataFrame(data)
+print("DataFrame:\n", df)
+print("\nDescribe:\n", df.describe())
+print("\nAverage Score:", df["Score"].mean())
+
+# Filtering
+high_scorers = df[df["Score"] > 85]
+print("\nHigh scorers (>85):\n", high_scorers)
